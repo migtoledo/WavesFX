@@ -1,0 +1,734 @@
+
+
+
+void saveDataXY()
+    {
+        // Saving Data XY
+        
+        /*
+           Range 1 | F1
+        
+           | x | f1(x) |  
+        
+           Range 2 | F2
+        
+           | x | f2(x) |
+        
+        */
+        
+        String filename;
+        String strPattern="yyyy/MM/dd HH:mm:ss";
+        strPattern="HH_mm_ss_dd_MM_yyyy";
+        DateTimeFormatter dtf = DateTimeFormatter.ofPattern(strPattern);
+	LocalDateTime now = LocalDateTime.now();
+        filename="DataXY_"+dtf.format(now)+".txt";
+        
+        File datafile=new File(filename);
+        
+        BufferedWriter databuffer;
+        
+        String strx;
+        String stry;
+        String strdataxy = null;
+        
+        String strHeader;
+        
+        String strf1x;
+        
+        strf1x="#  F1(x)="+GlobalsFX.Y01+"+"+GlobalsFX.A1+"Sin("+GlobalsFX.K1+
+                "("+"x-"+GlobalsFX.X01+")"+"-"+GlobalsFX.W1+"t+"+GlobalsFX.J1+")";
+        
+        
+        strHeader="#  DATA XY for t= "+GlobalsTimers.t+" s \n\n";
+        
+        strHeader=strHeader+strf1x+"\n\n";
+        
+        String str1=null;
+        String str2=null;
+        
+        str1=" [  F1(x)="+GlobalsFX.Y01+"+"+GlobalsFX.A1+"Sin("+GlobalsFX.K1+
+                "("+"x-"+GlobalsFX.X01+")"+"-"+GlobalsFX.W1+"t+"+GlobalsFX.J1+")  ]  ";
+        
+        str2=" [  F2(x)="+GlobalsFX.Y02+"+"+GlobalsFX.A2+"Sin("+GlobalsFX.K2+
+                "("+"x-"+GlobalsFX.X02+")"+"-"+GlobalsFX.W2+"t+"+GlobalsFX.J2+")  ]  ";
+        
+        try
+        {
+           databuffer=new BufferedWriter(new FileWriter(datafile)); 
+           
+           double x,y;
+         databuffer.write(strHeader);
+         
+        databuffer.write("\n\n#  |  X  |   | " + str1 + "  | \n\n\n");
+        
+        for(x=GlobalsFX.F1XMin; x<GlobalsFX.F1XMax; x+=GlobalsFX.dxF1())
+        {
+            y=f1(x);
+            
+            strx=x+" ";
+            stry=y+" ";
+            
+            strdataxy=strx+" "+stry+"\n";
+            
+            strdataxy=strdataxy+"\n";
+            
+            databuffer.write(strdataxy);
+        }
+           
+         databuffer.write("\n\n\n#  |  X  |   | " + str2 + "  | \n\n\n");
+        
+           for(x=GlobalsFX.F2XMin; x<GlobalsFX.F2XMax; x+=GlobalsFX.dxF2())
+        {
+            y=f2(x);
+            
+            strx=x+" ";
+            stry=y+" ";
+            
+            strdataxy=strx+" "+stry+"\n";
+            
+            strdataxy=strdataxy+"\n";
+            
+            databuffer.write(strdataxy);
+        }
+           
+           databuffer.write(strdataxy);
+           databuffer.close();
+        }
+        catch(IOException e)
+        {
+            Throwable cause = e.getCause();
+            cause.getMessage();
+        }
+        
+        
+    }
+    
+    private double f1(double x)
+    {
+        double y;
+        
+        y=GlobalsFX.Y01+GlobalsFX.A1*
+        		sin(GlobalsFX.K1*(x-GlobalsFX.X01)-GlobalsFX.W1*GlobalsTimers.t+GlobalsFX.J1);
+        
+        return y;
+    }
+    
+    
+    private double f2(double x)
+    {
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+void saveDataXY()
+    {
+        // Saving Data XY
+        
+        /*
+           Range 1 | F1
+        
+           | x | f1(x) |  
+        
+           Range 2 | F2
+        
+           | x | f2(x) |
+        
+        */
+        
+        String filename;
+        String strPattern="yyyy/MM/dd HH:mm:ss";
+        strPattern="HH_mm_ss_dd_MM_yyyy";
+        DateTimeFormatter dtf = DateTimeFormatter.ofPattern(strPattern);
+	LocalDateTime now = LocalDateTime.now();
+        filename="DataXY_"+dtf.format(now)+".txt";
+        
+        File datafile=new File(filename);
+        
+        BufferedWriter databuffer;
+        
+        String strx;
+        String stry;
+        String strdataxy = null;
+        
+        String strHeader;
+        
+        String strf1x;
+        
+        strf1x="#  F1(x)="+GlobalsFX.Y01+"+"+GlobalsFX.A1+"Sin("+GlobalsFX.K1+
+                "("+"x-"+GlobalsFX.X01+")"+"-"+GlobalsFX.W1+"t+"+GlobalsFX.J1+")";
+        
+        
+        strHeader="#  DATA XY for t= "+GlobalsTimers.t+" s \n\n";
+        
+        strHeader=strHeader+strf1x+"\n\n";
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+void saveDataXY()
+    {
+        // Saving Data XY
+        
+        /*
+           Range 1 | F1
+        
+           | x | f1(x) |  
+        
+           Range 2 | F2
+        
+           | x | f2(x) |
+        
+        */
+        
+        String filename;
+        String strPattern="yyyy/MM/dd HH:mm:ss";
+        strPattern="HH_mm_ss_dd_MM_yyyy";
+        DateTimeFormatter dtf = DateTimeFormatter.ofPattern(strPattern);
+	LocalDateTime now = LocalDateTime.now();
+        filename="DataXY_"+dtf.format(now)+".txt";
+        
+        File datafile=new File(filename);
+        
+        BufferedWriter databuffer;
+        
+        String strx;
+        String stry;
+        String strdataxy = null;
+        
+        String strHeader;
+        
+        String strf1x;
+        
+        strf1x="#  F1(x)="+GlobalsFX.Y01+"+"+GlobalsFX.A1+"Sin("+GlobalsFX.K1+
+                "("+"x-"+GlobalsFX.X01+")"+"-"+GlobalsFX.W1+"t+"+GlobalsFX.J1+")";
+        
+        
+        strHeader="#  DATA XY for t= "+GlobalsTimers.t+" s \n\n";
+        
+        strHeader=strHeader+strf1x+"\n\n";
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+------------------------------------------------------
+
+
+ void saveDataXY()
+    {
+        // Saving Data XY
+        
+        /*
+           Range 1 | F1
+        
+           | x | f1(x) |  
+        
+           Range 2 | F2
+        
+           | x | f2(x) |
+        
+        */
+        
+        String filename;
+        String strPattern="yyyy/MM/dd HH:mm:ss";
+        strPattern="HH_mm_ss_dd_MM_yyyy";
+        DateTimeFormatter dtf = DateTimeFormatter.ofPattern(strPattern);
+	LocalDateTime now = LocalDateTime.now();
+        filename="DataXY_"+dtf.format(now)+".txt";
+        
+        File datafile=new File(filename);
+        
+        BufferedWriter databuffer;
+        
+        String strx;
+        String stry;
+        String strdataxy = null;
+        
+        String strHeader;
+        
+        String strf1x;
+        
+        strf1x="#  F1(x)="+GlobalsFX.Y01+"+"+GlobalsFX.A1+"Sin("+GlobalsFX.K1+
+                "("+"x-"+GlobalsFX.X01+")"+"-"+GlobalsFX.W1+"t+"+GlobalsFX.J1+")";
+        
+        
+        strHeader="#  DATA XY for t= "+GlobalsTimers.t+" s \n\n";
+        
+        strHeader=strHeader+strf1x+"\n\n";
+        
+        String str1=null;
+        String str2=null;
+        
+        str1=" [  F1(x)="+GlobalsFX.Y01+"+"+GlobalsFX.A1+"Sin("+GlobalsFX.K1+
+                "("+"x-"+GlobalsFX.X01+")"+"-"+GlobalsFX.W1+"t+"+GlobalsFX.J1+")  ]  ";
+        
+        s
+
+
+
+
+
+
+
+
+
+
+------------------------------------------------------
+
+package application;
+
+import javafx.beans.value.ObservableValue;
+import javafx.geometry.Insets;
+import javafx.geometry.Pos;
+import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
+import javafx.scene.layout.Background;
+import javafx.scene.layout.BackgroundFill;
+import javafx.scene.layout.Border;
+import javafx.scene.layout.BorderStroke;
+import javafx.scene.layout.BorderStrokeStyle;
+import javafx.scene.layout.BorderWidths;
+import javafx.scene.layout.CornerRadii;
+import javafx.scene.layout.FlowPane;
+
+public class PanelCBottomLine1 extends FlowPane {
+
+    void setupPadding() {
+        int p = 2;
+        setPadding(new Insets(p, p, p, p));
+    }
+
+    void setupGaps() {
+        int hGap = 10, vGap = 2;
+        setHgap(hGap);
+        setVgap(vGap);
+    }
+
+    void setupAlignment() {
+        setAlignment(Pos.CENTER);
+    }
+
+    void setupBackground() {
+        setBackground(new Background(new BackgroundFill(GlobalsPanelColors.colorPanelCBottomLine1Background,
+                CornerRadii.EMPTY, Insets.EMPTY)));
+    }
+
+    void setupBorder() {
+        setBorder(new Border(new BorderStroke(GlobalsPanelColors.colorPanelCBottomLine1Border,
+                BorderStrokeStyle.SOLID, CornerRadii.EMPTY, BorderWidths.DEFAULT)));
+    }
+
+    void setupDecoration() {
+
+        setupPadding();
+        setupGaps();
+        setupAlignment();
+        setupBackground();
+        setupBorder();
+        setupTextFieldDx1();
+    }
+
+
+    // Menu for f1(x)
+
+    Label labelF1=new Label(" [ F1 ( x , t ) = A1 Sin ( k1 x - w1 t ) ] ");
+
+
+    Label labelDX1=new Label(" [ DX1 : " + GlobalsFX1.dx1 + " u ] ");
+
+    // Text field for x - resolution : dx1
+
+    Label labelInputDx1 = new Label(" Input DX1 ");
+
+    // Text field input for DX1
+
+    TextField textFieldDx1 = new TextField();
+
+    // Setting up Text Field dx1 of CBottom Line 1
+
+    void setupTextFieldDx1() {
+        textFieldDx1.setPromptText("");
+        textFieldDx1.setPrefColumnCount(3);
+        textFieldDx1.textProperty().addListener(
+                (ObservableValue<? extends String> observable,
+                 String oldValue, String newValue) -> {
+                    actionTextFieldDx1();
+                });
+    }
+
+    void actionTextFieldDx1()
+    {
+        double val = GlobalsFX1.dx1;
+        String strVal = textFieldDx1.getText();
+        String strVal2 = strVal.replace(",", ".");
+        try {
+            val = Double.parseDouble(strVal2);
+        } catch (NumberFormatException e) {
+            // Ignore exception
+        }
+        GlobalsFX1.setDx1(val);
+        String textLabelDx1=" [ DX1 : " + GlobalsFX1.dx1 + " u ] ";
+        labelDX1.setText(textLabelDx1);
+    }
+
+
+    void addElements()
+    {
+        getChildren().addAll(labelF1, labelDX1, labelInputDx1, textFieldDx1);
+    }
+
+    void setup()
+    {
+        addElements();
+        setupDecoration();
+    }
+
+    PanelCBottomLine1() {
+
+        setup();
+
+
+    }
+
+}
+
+
+
+Iterator<PointXY> it=particlesMatrix.iterator();
+        while(it.hasNext())
+        {
+            i++;
+            double x=it.next().xy.getReal();
+
+            it.next().setXY(new XY(x,f(x)));
+
+
+        }
+
+
+
+
+void computeParticlesMatrix() {
+
+
+        if(GlobalsTimers.t==0)
+        {
+            loadParticlesMatrix();
+        }
+        for (int i = 0; i < particlesMatrix.size(); i++) {
+            double x = particlesMatrix.get(i).xy.getReal();
+            particlesMatrix.get(i).setXY(new XY(x, f(x)));
+        }
+
+
+        System.out.println("Number of particles : " + particlesMatrix.size());
+
+    }
+---------------------------------------------------------------------------------------
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package application;
+
+import java.util.ArrayList;
+
+import javafx.scene.canvas.GraphicsContext;
+import javafx.scene.paint.Color;
+
+/**
+ *
+ * @author mtg
+ *
+ *         This class is the base for waves functions f=f(x,t) In fact, the
+ *         function represent waves of particles:
+ *
+ *         f=f(Particles at time t)
+ *
+ *         f represents the probability of such a particle at time t be at
+ *         position x in the space ---> Wave
+ *
+ *         This class FX is prepared to be integrated in the "super-class" [[[
+ *         VirtualSystem ]]]
+ *
+ *         FX -> Waves System -> Virtual System
+ */
+public final class FX {
+
+	double dx = 1;
+
+	ArrayList<PointXY> particlesMatrix;
+
+	// Just the function f=f(x)
+	double f(double x) {
+		double y = Math.sin(x + GlobalsTimers.t);
+
+		return y;
+	}
+
+	// At each instant of time, it calculates corresponding f(x)
+	// then loads the dynamical matrix of particles
+	void recomputeParticlesMatrix() {
+
+		for (int i = 0; i < particlesMatrix.size(); i++) {
+
+			double x = particlesMatrix.get(i).xy.getReal();
+
+			particlesMatrix.get(i).setXY(new XY(x, f(x)));
+
+		}
+
+		System.out.println("Dim:" + this.particlesMatrix.size());
+
+	}
+
+	void setInitialState() {
+		recomputeParticlesMatrix();
+	}
+
+	void draw(GraphicsContext gc) {
+		if (GlobalsTimers.t == 0)
+			this.loadParticlesMatrix();
+
+		if (GlobalsAnimState.isRunning || GlobalsTimers.t == 0)
+			this.recomputeParticlesMatrix();
+		for (int i = 0; i < this.particlesMatrix.size(); i++) {
+			particlesMatrix.get(i).draw(gc);
+		}
+
+	}
+
+	void loadParticlesMatrix() {
+		particlesMatrix.clear();
+
+		{
+			for (double x = GlobalsXY.xMin; x < GlobalsXY.xMax; x += dx) {
+
+				PointXY point = new PointXY(new XY(x, f(x)), Color.AZURE);
+				particlesMatrix.add(point);
+			}
+		}
+		System.out.println("Dim a:" + this.particlesMatrix.size());
+	}
+
+	void setup() {
+		particlesMatrix = new ArrayList<>();
+		loadParticlesMatrix();
+		recomputeParticlesMatrix();
+	}
+
+	/**
+	 * Default constructor
+	 */
+	FX() {
+		setup();
+	}
+
+}
+
+
+-----------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// creating Calendar object 
+        Calendar calendar = Calendar.getInstance(); 
+          
+        // Demonstrate Calendar's get()method 
+        System.out.println("Current Calendar's Year: " + calendar.get(Calendar.YEAR)); 
+        System.out.println("Current Calendar's Day: " + calendar.get(Calendar.DATE)); 
+        System.out.println("Current MINUTE: " + calendar.get(Calendar.MINUTE)); 
+        System.out.println("Current SECOND: " + calendar.get(Calendar.SECOND)); 
+snapshot() can be used on nodes and not on scene. In order to capture a "snapshot of the scene", you can take a snapshot of the root node of the scene.
+
+In your current problem, just create a snapshot from the FlowPane (root of the scene) and it should work.
+
+WritableImage image = root.snapshot(new SnapshotParameters(), null);
+
+
+
+The following method saves the barChart node as a png image:
+
+@FXML
+public void saveAsPng() {
+    WritableImage image = barChart.snapshot(new SnapshotParameters(), null);
+    
+    // TODO: probably use a file chooser here
+    File file = new File("chart.png");
+    
+    try {
+        ImageIO.write(SwingFXUtils.fromFXImage(image, null), "png", file);
+    } catch (IOException e) {
+        // TODO: handle exception here
+    }
+}
+
+Note: You could test this code with our AddressApp example 
+(see download in AddressApp Tutorial Part 7). 
+Just add the saveAsPng() method to the BirthdayStatisticsController 
+class and call the method through some action (e.g. a new button).
+
+
+String line1 = " R E A D Y   T O   S T A R T   W A V E S   FX \n\n ";
+      String line2 = " Press the OK button to enter or CANCEL to exit now ";
+      String str = line1 + line2;
+      Alert openingProgram = new Alert(Alert.AlertType.CONFIRMATION, str);
+      openingProgram.showAndWait().ifPresent(response -> {
+         if (response == ButtonType.OK) {
+            //continue
+            System.out.println("\n\nOpening program ...\n\n");
+         }
+         if (response == ButtonType.CANCEL) {
+            System.out.println("\n\nExiting the program ... \n\nGood bye !\n\n");
+            System.exit(0);
+         }
+      });
+
+
+
+
+
+
+package application;
+
+import javafx.scene.paint.Color;
+
+/**
+ *
+ * @author mtg
+ *
+ * <p>
+ *
+ * Class for global variables of points PXY with radius, and color
+ */
+public class GlobalsRadius {
+
+    static Color defaultColor = Color.BLUE;
+
+    // Default radius in pixels
+
+    // Particles without a given initial radius, can input some user-given radius
+
+    static final double defaultRadius = 10;
+
+    // Proportional radius
+
+    // Particles are initialized with given radius, can make it proportional to the XY
+    // scale
+
+    static boolean proportionalRadius=false;
+
+    static final RadiusPixels defaultRadiusPix = new RadiusPixels(defaultRadius);
+
+    static final RadiusUnits defaultRadiusUnits = defaultRadiusPix.toUnits();
+
+    static RadiusPixels radiusPix = defaultRadiusPix;
+
+    static RadiusUnits radiusUnits = defaultRadiusUnits;
+
+    static void setRadiusPix(double R) {
+        radiusPix = new RadiusPixels(R);
+        radiusUnits = radiusPix.toUnits();
+    }
+
+    static void setRadiusUnits(double R) {
+        radiusUnits = new RadiusUnits(R);
+        radiusPix = radiusUnits.toPixels();
+    }
+
+    static void setRadius(RadiusPixels R) {
+        radiusPix = R;
+        radiusUnits = radiusPix.toUnits();
+    }
+
+    static void setRadius(RadiusUnits R) {
+        radiusUnits = R;
+        radiusPix = radiusUnits.toPixels();
+    }
+
+    // Radius in pixel units
+    static double Rpix = radiusPix.get();
+
+    // Radius in math units
+    static double Runits = radiusUnits.get();
+
+    static String strRpix = String.format("%.2f", Rpix);
+
+    static String strRunits = String.format("%.2f", Runits);
+
+    static void updateRadius() {
+        Rpix = radiusPix.get();
+        Runits = radiusUnits.get();
+        strRpix = String.format("%.2f", Rpix);
+        strRunits = String.format("%.2f", Runits);
+    }
+
+}
